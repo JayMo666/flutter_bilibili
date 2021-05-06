@@ -10,7 +10,7 @@ class TransitPage extends StatefulWidget {
 }
 
 class _TransitPageState extends State<TransitPage> {
-  int _currentTime = 6;
+  int _currentTime = 1;
   Timer _timer;
   @override
   void initState() {
