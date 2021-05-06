@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bilibili/components/roo_page_head.dart';
+import 'package:flutter_bilibili/http/http.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -30,8 +31,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   TabController _tabController;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    // 请求
+    getList();
     _tabController = TabController(
       length: _tabs.length,
       initialIndex: 1,
@@ -39,9 +41,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 
+  Future getList() async {
+    final result = await Http.get('/api/song/info/2');
+    print(result);
+  }
+
   @override
   void dispose() {
-    // TODO: implement dispose
     _tabController.dispose();
     super.dispose();
   }
