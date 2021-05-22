@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class tinyVideo extends StatefulWidget {
-  tinyVideo({Key key}) : super(key: key);
+class TinyVideo extends StatefulWidget {
+  TinyVideo({Key key}) : super(key: key);
 
   @override
-  _tinyVideoState createState() => _tinyVideoState();
+  _TinyVideoState createState() => _TinyVideoState();
 }
 
-class _tinyVideoState extends State<tinyVideo> {
+class _TinyVideoState extends State<TinyVideo> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -26,7 +26,7 @@ class _RootPageState extends State<RootPage> {
     HomePage(),
     MusicPage(),
     Container(),
-    tinyVideo(),
+    TinyVideo(),
     ProFile(),
   ];
   final List<BottomNavigationBarItem> _bottomNavBarList = [];

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bilibili/components/roo_page_head.dart';
 import 'package:flutter_bilibili/http/http.dart';
+import 'package:flutter_bilibili/view/sub_pages/song_page.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -19,7 +20,7 @@ const List<Tab> _tabs = [
 ];
 
 final List<Widget> _tabsContent = [
-  Text('歌曲'),
+  SongPage(),
   Text('歌曲'),
   Text('歌曲'),
   Text('歌曲'),
@@ -42,7 +43,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   Future getList() async {
-    final result = await Http.get('/api/song/info/2');
+    final result = await Http.get('/api/user/info/2', params: {
+      'page': 1,
+    });
     print(result);
   }
 

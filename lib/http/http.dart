@@ -18,13 +18,13 @@ class Http {
     Map<String, dynamic> headers,
     List<Interceptor> interceptors,
   }) {
-    HttpRequest().init({
+    HttpRequest().init(
       baseUrl: baseUrl,
       connectTimeout: connectTimeout,
       receiveTimeout: receiveTimeout,
       headers: headers,
       interceptors: interceptors,
-    });
+    );
   }
 
   /// 设置请求头
@@ -44,11 +44,12 @@ class Http {
     Options options,
     CancelToken cancelToken,
   }) async {
-    return await HttpRequest().get(path, {
+    return await HttpRequest().get(
+      path,
       params: params,
       options: options,
       cancelToken: cancelToken,
-    });
+    );
   }
 
   /// restful post 操作
@@ -59,12 +60,13 @@ class Http {
     Options options,
     CancelToken cancelToken,
   }) async {
-    return await HttpRequest().post(path, {
+    return await HttpRequest().post(
+      path,
       params: params,
       data: data,
       options: options,
       cancelToken: cancelToken,
-    });
+    );
   }
 
   /// restful post form 表单提交操作
@@ -74,10 +76,11 @@ class Http {
     Options options,
     CancelToken cancelToken,
   }) async {
-    return await HttpRequest().postForm(path, {
+    return await HttpRequest().postForm(
+      path,
       params: params,
       options: options,
       cancelToken: cancelToken,
-    });
+    );
   }
 }

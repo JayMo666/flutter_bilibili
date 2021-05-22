@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bilibili/config/http_options.dart';
-
 import 'http_interceptor.dart';
 
 // http 请求单例类
@@ -35,8 +34,7 @@ class HttpRequest {
   /// [receiveTimeout] 接收超时赶时间
   /// [headers] 请求头
   /// [interceptors] 基础拦截器
-  void init(
-    Map<Object, Object> map, {
+  void init({
     String baseUrl,
     int connectTimeout,
     int receiveTimeout,
@@ -80,8 +78,7 @@ class HttpRequest {
 
   /// restful get 操作
   Future get(
-    String path,
-    Map<Object, Object> map, {
+    String path, {
     Map<String, dynamic> params,
     Options options,
     CancelToken cancelToken,
@@ -99,15 +96,13 @@ class HttpRequest {
 
   /// restful post 操作
   Future post(
-    String path,
-    Map map, {
+    String path, {
     Map<String, dynamic> params,
     dynamic data,
     Options options,
     CancelToken cancelToken,
   }) async {
     Options requestOptions = setAuthorizationHeader(options ?? Options());
-
     Response response = await dio.post(
       path,
       data: data,
@@ -120,8 +115,7 @@ class HttpRequest {
 
   /// restful post form 表单提交操作
   Future postForm(
-    String path,
-    Map<Object, Object> map, {
+    String path, {
     Map<String, dynamic> params,
     Options options,
     CancelToken cancelToken,

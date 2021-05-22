@@ -6,5 +6,7 @@ class HttpOptions {
   static const int RECEIVE_TIMEOUT = 30000;
   // 地址前缀
   // static const String BASE_URL = 'http://dev.duuchin.com';
-  static const String BASE_URL = 'http://192.168.1.102';
+  // static const String BASE_URL = 'http://127.0.0.1';
+  static const String BASE_URL = 'http://localhost';
+  // static const String BASE_URL = 'http://flutter-bilibili.com:8092';
 }
